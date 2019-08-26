@@ -11,6 +11,7 @@ script:
   - ./mvnw site -pl docs -B -q
 after_success:
   - bash ci/after_success.sh
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
 cache:
   directories:
     - $HOME/.m2
